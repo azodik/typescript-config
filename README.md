@@ -19,11 +19,13 @@ yarn add -D @azodik/typescript-config
 
 ### Extending Configurations
 
+After installing the package, you can extend the configurations using relative paths in your project:
+
 #### Base Configuration
 
 ```json
 {
-  "extends": "@azodik/typescript-config/base.json"
+  "extends": "./node_modules/@azodik/typescript-config/base.json"
 }
 ```
 
@@ -31,7 +33,7 @@ yarn add -D @azodik/typescript-config
 
 ```json
 {
-  "extends": "@azodik/typescript-config/nextjs.json"
+  "extends": "./node_modules/@azodik/typescript-config/nextjs.json"
 }
 ```
 
@@ -39,7 +41,26 @@ yarn add -D @azodik/typescript-config
 
 ```json
 {
-  "extends": "@azodik/typescript-config/react-library.json"
+  "extends": "./node_modules/@azodik/typescript-config/react-library.json"
+}
+```
+
+### Alternative: Copy and Extend
+
+You can also copy the configuration files to your project and extend them:
+
+```bash
+# Copy the configs to your project
+cp node_modules/@azodik/typescript-config/base.json ./tsconfig-base.json
+cp node_modules/@azodik/typescript-config/nextjs.json ./tsconfig-nextjs.json
+cp node_modules/@azodik/typescript-config/react-library.json ./tsconfig-react.json
+```
+
+Then extend them locally:
+
+```json
+{
+  "extends": "./tsconfig-base.json"
 }
 ```
 
