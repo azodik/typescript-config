@@ -1,0 +1,52 @@
+{
+  "name": "@azodik/typescript-config",
+  "version": "0.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azodik/typescript-config.git"
+  },
+  "description": "Shared Typescript configuration for Azodik",
+  "keywords": [
+    "typescript",
+    "typescript-config",
+    "eslint",
+    "eslint-config",
+    "react",
+    "nextjs",
+    "prettier"
+  ],
+  "author": "Azodik",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "prebuild": "pnpm clean",
+    "prepare": "pnpm build",
+    "prepublishOnly": "pnpm build",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "publish:changeset": "changeset publish",
+    "publish:npm": "npm publish --access public"
+  },
+  "dependencies": {
+    "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.6"
+  }
+}
