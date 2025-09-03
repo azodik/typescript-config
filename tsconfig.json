@@ -1,8 +1,8 @@
 {
-  "extends": "./src/base.json",
+  "extends": "./base.json",
   "compilerOptions": {
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": ".",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
@@ -13,6 +13,6 @@
     "moduleResolution": "Bundler",
     "skipLibCheck": true
   },
-  "include": ["src/**/*"],
+  "include": ["index.ts", "*.json"],
   "exclude": ["dist", "node_modules", "**/*.test.ts", "**/*.spec.ts"]
 }

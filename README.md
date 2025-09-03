@@ -17,27 +17,29 @@ yarn add -D @azodik/typescript-config
 
 ## Usage
 
-### Base Configuration
+### Extending Configurations
+
+#### Base Configuration
 
 ```json
 {
-  "extends": "@azodik/typescript-config/src/base.json"
+  "extends": "@azodik/typescript-config/base.json"
 }
 ```
 
-### Next.js Projects
+#### Next.js Projects
 
 ```json
 {
-  "extends": "@azodik/typescript-config/src/nextjs.json"
+  "extends": "@azodik/typescript-config/nextjs.json"
 }
 ```
 
-### React Libraries
+#### React Libraries
 
 ```json
 {
-  "extends": "@azodik/typescript-config/src/react-library.json"
+  "extends": "@azodik/typescript-config/react-library.json"
 }
 ```
 
@@ -52,23 +54,27 @@ import { baseConfig, nextjsConfig, reactLibraryConfig } from '@azodik/typescript
 console.log(baseConfig.compilerOptions.target); // "ES2022"
 console.log(nextjsConfig.compilerOptions.module); // "ESNext"
 console.log(reactLibraryConfig.compilerOptions.jsx); // "react-jsx"
+
+// Or import the default export
+import configs from '@azodik/typescript-config';
+console.log(configs.base.compilerOptions.strict); // true
 ```
 
 ## Available Configurations
 
-- **`src/base.json`**: Default TypeScript configuration with strict settings
+- **`base.json`**: Default TypeScript configuration with strict settings
   - ES2022 target
   - Strict mode enabled
   - Node.js module resolution
   - Declaration file generation
   
-- **`src/nextjs.json`**: Next.js specific configuration extending base
+- **`nextjs.json`**: Next.js specific configuration extending base
   - ESNext module system
   - Bundler module resolution
   - JSX preservation
   - Next.js plugin support
   
-- **`src/react-library.json`**: React library configuration extending base
+- **`react-library.json`**: React library configuration extending base
   - React JSX transform
   - Extends base configuration
 
@@ -80,6 +86,7 @@ console.log(reactLibraryConfig.compilerOptions.jsx); // "react-jsx"
 - **Declaration file generation** - Full TypeScript support
 - **JSON module support** - Direct import of configuration files
 - **Extensible design** - Easy to extend and customize
+- **Dual usage** - Extend JSON files OR import programmatically
 
 ## Requirements
 

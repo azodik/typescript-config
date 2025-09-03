@@ -1,6 +1,6 @@
 {
   "name": "@azodik/typescript-config",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -10,11 +10,8 @@
   "keywords": [
     "typescript",
     "typescript-config",
-    "eslint",
-    "eslint-config",
-    "react",
     "nextjs",
-    "prettier"
+    "react-library"
   ],
   "author": "Azodik",
   "type": "module",
@@ -26,7 +23,10 @@
       "import": "./dist/index.js",
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
-    }
+    },
+    "./base": "./base.json",
+    "./nextjs": "./nextjs.json",
+    "./react-library": "./react-library.json"
   },
   "publishConfig": {
     "access": "public"
